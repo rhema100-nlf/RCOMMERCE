@@ -1,0 +1,6 @@
+@RCOMMERCE_HostAddress = http://localhost:5194
+
+GET {{RCOMMERCE_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
