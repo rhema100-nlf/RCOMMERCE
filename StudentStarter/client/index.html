@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RCOMMERCE Workout Goals</title>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script src="app.js?v=2" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <div class="hero-copy">
+      <p class="eyebrow">RCOMMERCE PERSONAL</p>
+      <h1>Train with intention.</h1>
+      <p>Plan your training, track progress, and stay consistent.</p>
+    </div>
+    <div class="hero-mark" aria-hidden="true">RC</div>
+  </header>
+
+  <main>
+    <section class="panel" aria-labelledby="add-workout-heading">
+      <h2 id="add-workout-heading">Add a workout goal</h2>
+      <form id="workout-form">
+        <label>
+          Workout name
+          <input name="name" placeholder="Morning strength" required maxlength="120">
+        </label>
+        <label>
+          Goal
+          <input name="goal" placeholder="Build strength" required maxlength="80">
+        </label>
+        <label>
+          Duration (minutes)
+          <input name="durationMinutes" type="number" min="5" max="300" required>
+        </label>
+        <label>
+          Difficulty
+          <select name="difficulty" required>
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+          </select>
+        </label>
+        <label>
+          Scheduled for
+          <input name="scheduledFor" type="datetime-local" required>
+        </label>
+        <label class="availability">
+          <input name="isCompleted" type="checkbox">
+          Completed
+        </label>
+        <button type="submit">Add workout</button>
+      </form>
+    </section>
+
+    <section class="products-section" aria-labelledby="workouts-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Connected to your API</p>
+          <h2 id="workouts-heading">Workout plan</h2>
+        </div>
+        <button id="refresh-button" class="secondary-button" type="button">Refresh</button>
+      </div>
+      <p id="status" role="status" aria-live="polite"></p>
+      <div class="stats" aria-label="Workout statistics">
+        <div class="stat-card"><strong id="total-stat">0</strong><span>Total goals</span></div>
+        <div class="stat-card"><strong id="completed-stat">0</strong><span>Completed</span></div>
+        <div class="stat-card"><strong id="minutes-stat">0</strong><span>Minutes planned</span></div>
+      </div>
+      <div id="products" class="products-grid"></div>
+    </section>
+  </main>
+</body>
+</html>
